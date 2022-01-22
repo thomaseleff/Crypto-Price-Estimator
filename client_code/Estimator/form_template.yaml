@@ -1,0 +1,344 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{"MBWEQH":30,"LQHUFR":30}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: This calculator estimates the price of a cryptocurrency in a target currency that is required to achieve the same cryptocurrency market cap as the current market cap of the US Dollar.,
+      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: label_17
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH IQLMAU,LDFVCK', full_width_row: false}
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '4',
+      tooltip: ''}
+    name: spacer_9
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH WHHTUM,LFMMTN', full_width_row: false}
+  - type: ColumnPanel
+    properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: ''}
+    name: column_panel_1
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH GVXZNW,XQKEXL', full_width_row: false}
+    components:
+    - type: Label
+      properties: {role: subheading, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Crypto Ticker, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'HNVBUK,UGBEBC'}
+    - type: TextBox
+      properties: {role: dense, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'HNVBUK,XRHRHD'}
+      data_bindings: []
+      event_bindings: {}
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '4',
+      tooltip: ''}
+    name: spacer_7
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH PXEVBM,OQIEUT', full_width_row: false}
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: "Crypto Ticker value must be available on \n[https://finance.yahoo.com/cryptocurrencies/]",
+      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: true, background: '', bold: false, underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH ZYITAP,MEQXLM', full_width_row: false}
+    data_bindings: []
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '4',
+      tooltip: ''}
+    name: spacer_8
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH MQAOII,QISUCP', full_width_row: false}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"JRUACY":27,"RBNYMN":27}'}
+    name: card_6
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH EMCCTQ,YVOMAQ', full_width_row: false}
+    components:
+    - type: Label
+      properties: {role: subheading, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Target Currency, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'QVXEXD,JRUACY'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['United States [Dollar]', 'Australia [Dollar]', 'Brazil [Real]', 'Canada
+            [Dollar]', 'China [Yuan]', 'Denmark [Krone]', 'EMU Countries [Euro]',
+          'Hong Kong [Dollar]', 'India [Rupee]', 'Japan [Yen]', 'Malaysia [Ringgit]',
+          'Mexico [Peso]', 'New Zealand [Dollar]', 'Norway [Krone]', 'Singapore [Dollar]',
+          'South Africa [Rand]', 'South Korea [Won]', 'Sri Lanka [Rupee]', 'Sweden
+            [Krona]', 'Switzerland [Franc]', 'Taiwan [Dollar]', 'Thailand [Baht]',
+          'United Kingdom [Pound]', 'Venezuela [Bolivar]']
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_1
+      layout_properties: {grid_position: 'QVXEXD,RBNYMN'}
+      data_bindings: []
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '4',
+      tooltip: ''}
+    name: spacer_3
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH DUVKLA,ZXTXHF', full_width_row: false}
+  - type: Button
+    properties: {role: primary-color, align: full, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Calculate, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: primary_color_1
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH PBTZBK,OROYOS', full_width_row: false}
+    event_bindings: {click: primary_color_1_click}
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '4',
+      tooltip: ''}
+    name: spacer_2
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH HUUVBD,JXWJNU'}
+  - type: Label
+    properties: {role: text, align: left, tooltip: '', border: '', foreground: '#F44336',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: true, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_25
+    layout_properties: {grid_position: 'FGTAYS,MBWEQH IOXLJB,DIGCNG', full_width_row: false}
+    event_bindings: {}
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: ''}
+    name: card_7
+    layout_properties: {grid_position: 'FGTAYS,LQHUFR IYENPK,PELHMU', full_width_row: false}
+    components:
+    - type: ColumnPanel
+      properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: column_panel_2
+      layout_properties: {grid_position: 'OCJLYI,VHKDKK', full_width_row: false}
+      components:
+      - type: Label
+        properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Target Market Cap
+
+            [Billions]', font_size: null, font: '', spacing_above: small, icon_align: left,
+          spacing_below: small, italic: false, background: '', bold: false, underline: false,
+          icon: ''}
+        name: label_6
+        layout_properties: {grid_position: 'QBBKOK,AHIBEU'}
+      - type: Label
+        properties: {role: headline, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: '2,074.1', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_7
+        layout_properties: {grid_position: 'KYEESI,BVIIIE'}
+    - type: ColumnPanel
+      properties: {role: card, col_widths: '{}'}
+      name: card_1
+      layout_properties: {grid_position: 'OCJLYI,CSYYYQ', full_width_row: false}
+      components:
+      - type: Label
+        properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Crypto Market Cap
+
+            [Billions]', font_size: null, font: '', spacing_above: small, icon_align: left,
+          spacing_below: small, italic: false, background: '', bold: false, underline: false,
+          icon: ''}
+        name: label_8
+        layout_properties: {grid_position: 'LOBQAK,KHZPWD'}
+      - type: Label
+        properties: {role: headline, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: '3.9', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_9
+        layout_properties: {grid_position: 'FEUYDO,ICWWVP'}
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: ''}
+    name: card_8
+    layout_properties: {grid_position: 'FGTAYS,LQHUFR PZJTQH,WIOJWZ'}
+    components:
+    - type: ColumnPanel
+      properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: card_2
+      layout_properties: {grid_position: 'OBGMZH,LWCSBI', full_width_row: false}
+      components:
+      - type: Label
+        properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Coin Price
+
+
+            ', font_size: null, font: '', spacing_above: small, icon_align: left,
+          spacing_below: small, italic: false, background: '', bold: false, underline: false,
+          icon: ''}
+        name: label_10
+        layout_properties: {grid_position: 'ZJKZMI,YBTDDS'}
+      - type: Label
+        properties: {role: headline, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: '222.37', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_11
+        layout_properties: {grid_position: 'MGIAXO,MFGAEW'}
+    - type: ColumnPanel
+      properties: {role: card, col_widths: '{}'}
+      name: card_5
+      layout_properties: {grid_position: 'OBGMZH,JNZPBA', full_width_row: false}
+      components:
+      - type: Label
+        properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Estimated Coin
+
+            Price
+
+            ', font_size: null, font: '', spacing_above: small, icon_align: left,
+          spacing_below: small, italic: false, background: '', bold: false, underline: false,
+          icon: ''}
+        name: label_15
+        layout_properties: {grid_position: 'NRFZIA,TYGRVL'}
+      - type: Label
+        properties: {role: headline, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: '115,596', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_16
+        layout_properties: {grid_position: 'FKQBXV,RQMJSY'}
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: ''}
+    name: card_9
+    layout_properties: {grid_position: 'FGTAYS,LQHUFR YKKPOK,SIEHFM'}
+    components:
+    - type: ColumnPanel
+      properties: {role: card, col_widths: '{}'}
+      name: card_3
+      layout_properties: {grid_position: 'ZNITME,NXKWFA', full_width_row: false}
+      components:
+      - type: Label
+        properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: "Price Multiplier\n ", font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_5
+        layout_properties: {grid_position: 'XYOYLP,MCYGCT'}
+      - type: Label
+        properties: {role: headline, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: '520', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_12
+        layout_properties: {grid_position: 'PPYSIW,JOGLPQ'}
+    - type: ColumnPanel
+      properties: {role: card, col_widths: '{}'}
+      name: card_4
+      layout_properties: {grid_position: 'ZNITME,GNNJZB', full_width_row: false}
+      components:
+      - type: Label
+        properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: "Percentage Growth\n ", font_size: null, font: '',
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '', bold: false, underline: false, icon: ''}
+        name: label_13
+        layout_properties: {grid_position: 'XCGUYD,YSLGAV'}
+      - type: Label
+        properties: {role: headline, align: center, tooltip: '', border: '', foreground: '#4CAF50',
+          visible: true, text: '51,883', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+          underline: false, icon: ''}
+        name: label_14
+        layout_properties: {grid_position: 'VSEITM,ZBYTPD'}
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '4',
+      tooltip: ''}
+    name: spacer_4
+    layout_properties: {grid_position: 'VEMEZH,OKKMOX'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '''Target Market Cap'' is always determined by the current
+        market cap of the US Dollar. If a different ''Target Currency'' is provided
+        other than the US Dollar, the US market cap is converted to the ''Target Currency''
+        based on the foreign exchange rate between the US Dollar and the ''Target
+        Currency''. This conversion is also applied to the ''Crypto Market Cap'',
+        ''Coin Price'' and ''Estimated Coin Price''. The US market cap and foreign
+        exchange rates are scraped from the US Federal Reserve [https://www.federalreserve.gov].',
+      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: label_18
+    layout_properties: {grid_position: 'SDAAPS,LMZKJU'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'The ''Crypto Market Cap'' and ''Coin Price'' are scraped
+        from Yahoo Finance [https://finance.yahoo.com/], which sources these metrics
+        from CoinMarketCap [https://coinmarketcap.com/]. ', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_19
+    layout_properties: {grid_position: 'CHXRVF,VDXJKW'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'This calculator is intended to produce a "what-if" scenario
+        where if the market cap of a given cryptocurrency was to be equal to the current
+        market cap of the US Dollar, what would be the resulting ''Coin Price'' of
+        the cryptocurrency in some ''Target Currency''. This is not to be interpreted
+        as a forecast or a realistic expectation of the future ''Coin Price''. No
+        result from this estimator constitutes financial advice.', font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_20
+    layout_properties: {grid_position: 'VGWDFZ,MSPJWF'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'There are many determinations for the actual and future
+        ''Crypto Market Cap'' and ''Coin Price'' of a given cryptocurrency. These
+        factors are both uncontrolled (i.e. market behavior) and controlled (i.e.
+        cryptocurrency white paper), none of which this calculator considers.', font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_21
+    layout_properties: {grid_position: 'TFSXZY,PPUUVT'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_22
+    layout_properties: {grid_position: 'MMLLCS,YGYZRR'}
+- type: Label
+  properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Cryptocurrency Price Estimator, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: ''}
+  name: label_1
+  layout_properties: {slot: title}
+  event_bindings: {show: label_1_show}

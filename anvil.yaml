@@ -1,0 +1,161 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+package_name: CryptocurrencyEstimator
+allow_embedding: false
+name: Clone of CryptoPriceEstimator
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: Estimator
+native_deps: {head_html: ''}
+db_schema:
+  value:
+    title: value
+    client: full
+    server: full
+    columns:
+    - name: Year
+      admin_ui: {width: 200}
+      type: number
+    - name: '1'
+      admin_ui: {width: 200}
+      type: number
+    - name: '2'
+      admin_ui: {width: 200}
+      type: number
+    - name: '5'
+      admin_ui: {width: 200}
+      type: number
+    - name: '10'
+      admin_ui: {width: 200}
+      type: number
+    - name: '20'
+      admin_ui: {width: 200}
+      type: number
+    - name: '50'
+      admin_ui: {width: 200}
+      type: number
+    - name: '100'
+      admin_ui: {width: 200}
+      type: number
+    - name: 500to10K
+      admin_ui: {width: 200}
+      type: number
+    - name: Total
+      admin_ui: {width: 200}
+      type: number
+  volume:
+    title: volume
+    client: full
+    server: full
+    columns:
+    - name: Year
+      admin_ui: {width: 200}
+      type: number
+    - name: '1'
+      admin_ui: {width: 200}
+      type: number
+    - name: '2'
+      admin_ui: {width: 200}
+      type: number
+    - name: '5'
+      admin_ui: {width: 200}
+      type: number
+    - name: '10'
+      admin_ui: {width: 200}
+      type: number
+    - name: '20'
+      admin_ui: {width: 200}
+      type: number
+    - name: '50'
+      admin_ui: {width: 200}
+      type: number
+    - name: '100'
+      admin_ui: {width: 200}
+      type: number
+    - name: 500to10K
+      admin_ui: {width: 200}
+      type: number
+    - name: Total
+      admin_ui: {width: 200}
+      type: number
+  exchange:
+    title: exchange
+    client: full
+    server: full
+    columns:
+    - name: Year
+      admin_ui: {width: 200}
+      type: number
+    - name: AUSTRALIA_DOLLAR-US
+      admin_ui: {width: 200}
+      type: number
+    - name: CANADA_DOLLAR-US
+      admin_ui: {width: 200}
+      type: number
+    - name: DENMARK_KRONE-US
+      admin_ui: {width: 200}
+      type: number
+    - name: UNITEDKINGDOM_POUND-US
+      admin_ui: {width: 200}
+      type: number
+    - name: EMUCOUNTRIES_EURO-US
+      admin_ui: {width: 200}
+      type: number
+    - name: SWITZERLAND_FRANC-US
+      admin_ui: {width: 200}
+      type: number
+    - name: SWEDEN_KRONA-US
+      admin_ui: {width: 200}
+      type: number
+    - name: TAIWAN_DOLLAR-US
+      admin_ui: {width: 200}
+      type: number
+    - name: THAILAND_BAHT-US
+      admin_ui: {width: 200}
+      type: number
+    - name: NEWZEALAND_DOLLAR-US
+      admin_ui: {width: 200}
+      type: number
+    - name: CHINA_YUAN-US
+      admin_ui: {width: 200}
+      type: number
+    - name: INDIA_RUPEE-US
+      admin_ui: {width: 200}
+      type: number
+    - name: SOUTHAFRICA_RAND-US
+      admin_ui: {width: 200}
+      type: number
+    - name: SRILANKA_RUPEE-US
+      admin_ui: {width: 200}
+      type: number
+    - name: SOUTHKOREA_WON-US
+      admin_ui: {width: 200}
+      type: number
+    - name: MEXICO_PESO-US
+      admin_ui: {width: 200}
+      type: number
+    - name: JAPAN_YEN-US
+      admin_ui: {width: 200}
+      type: number
+    - name: VENEZUELA_BOLIVAR-US
+      admin_ui: {width: 200}
+      type: number
+    - name: BRAZIL_REAL-US
+      admin_ui: {width: 200}
+      type: number
+    - name: HONGKONG_DOLLAR-US
+      admin_ui: {width: 200}
+      type: number
+    - name: MALAYSIA_RINGGIT-US
+      admin_ui: {width: 200}
+      type: number
+    - name: SINGAPORE_DOLLAR-US
+      admin_ui: {width: 200}
+      type: number
+    - name: NORWAY_KRONE-US
+      admin_ui: {width: 200}
+      type: number
+renamed: true
