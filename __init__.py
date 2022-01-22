@@ -1,4 +1,3 @@
-#
 # This repository is an Anvil app. Learn more at https://anvil.works/
 # To run the server-side code on your own machine, run:
 # pip install anvil-uplink
