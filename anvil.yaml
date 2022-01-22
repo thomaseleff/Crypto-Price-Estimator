@@ -5,7 +5,7 @@ services:
   server_config: {}
 package_name: CryptocurrencyEstimator
 allow_embedding: false
-name: Clone of CryptoPriceEstimator
+name: CryptoPriceEstimator - Dev
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
 metadata: {}
 startup_form: Estimator
