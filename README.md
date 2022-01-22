@@ -1,0 +1,2 @@
+# Cryptocurrency Price Estimator
+The Cryptocurrency Price Estimator is a web application built through [anvil.works](https://anvil.works/) that generates a "what-if" scenario where if the market cap of a given cryptocurrency was to be equal to the current market cap of the US Dollar, what would be the resulting 'Coin Price' of the cryptocurrency in some 'Target Currency'.
