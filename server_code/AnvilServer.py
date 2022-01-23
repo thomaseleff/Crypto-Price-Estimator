@@ -101,8 +101,7 @@ Util.output_header(configDict,
 Util.write_log(configDict,
                '\n')
 Util.write_log(configDict,
-               'NOTE: Uplink Established Successfully ['
-               + upLinkID + '].')
+               'NOTE: Uplink Established Successfully.')
 Util.output_header(configDict,
                    'Anvil Client Requests',
                    'https://crypto-price-estimator.anvil.app')
