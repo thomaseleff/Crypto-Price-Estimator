@@ -10,7 +10,7 @@
 +----------------------------------------------------------------+ 
     Info        : [https://crypto-price-estimator.anvil.app] 
 
-NOTE: Uplink Established Successfully [4PEASWHJPSO4VUYS2M6FHD4X-V6YDNU752H23XGPB].
+NOTE: Uplink Established Successfully.
 
 +----------------------------------------------------------------+ 
 |   Anvil Client Requests                                        | 
