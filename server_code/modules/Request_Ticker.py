@@ -2,7 +2,7 @@
 #   Request Stock Ticker Info from Yahoo Finance
 # --------------------------------------------------
 #   Author   : Tom Eleff
-#   Version  : 1_1
+#   Version  : 1_0
 #   Date     : 30MAY21
 # --------------------------------------------------
 
@@ -35,7 +35,7 @@ def request_mktdata(configDict, startDate,
                   'tickerVol': tickerObj.info['circulatingSupply'],
                   'tickerPrice': tickerObj.info['regularMarketPrice']}
 
-    # # Reset Index
+    # Reset Index
     df.reset_index(inplace=True)
     df = df.rename(columns={'index': 'Date'})
 
@@ -44,5 +44,5 @@ def request_mktdata(configDict, startDate,
               sep=',',
               index=False)
 
-    # # Return Dictionary
+    # Return Dictionary
     return tickerDict
