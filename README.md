@@ -5,7 +5,7 @@ The Cryptocurrency Price Estimator is a web application built through [anvil.wor
 
 # Features
 - Supports all cryptocurrencies available from [Yahoo Finance](https://finance.yahoo.com/cryptocurrencies/) (currently over 350)
-- Conversion of the United States - Dollar to 23 other currencies
+- Conversion of the United States [Dollar] to 23 other currencies
 - Weekly web-scraping of the US market cap (volume and value) and foreign exchange rates from [US Federal Reserve](https://www.federalreserve.gov)
 - On demand web-scraping of the requested cryptocurrency 'Crypto Market Cap' and 'Coin Price' from [Yahoo Finance](https://finance.yahoo.com/cryptocurrencies/)
 
