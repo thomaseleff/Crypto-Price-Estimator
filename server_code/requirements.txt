@@ -1,6 +1,6 @@
 anvil==0.0.2
 anvil_uplink==0.3.34
-numpy>=1.21
+numpy==1.19.4
 pandas==1.1.5
 requests==2.25.1
 schedule==1.1.0
