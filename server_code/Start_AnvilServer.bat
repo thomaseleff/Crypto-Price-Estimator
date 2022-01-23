@@ -6,4 +6,4 @@ TITLE Cryptocurrency Price Estimator Anvil Uplink
 ECHO Anvil Uplink Server is Running...
 ECHO         Use Ctrl + C to Shutdown
 ECHO.
-"C:/Users/Tom Eleff/.edm/envs/Python3/python.exe" "C:/Batch Scripting/Market Capitalization Calculator/AnvilServer.py" 2>&1
+"C:/Users/Tom Eleff/.edm/envs/Python3/python.exe" "T:\Documents\Projects\Anvil\CryptoPriceEstimator_Dev\server_code\AnvilServer.py" 2>&1
