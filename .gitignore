@@ -2,5 +2,4 @@
 *.pyo
 __pycache__
 .anvil-data
-"T:\Documents\Projects\Anvil\CryptoPriceEstimator_Dev\server_code\Main.py"
-"T:\Documents\Projects\Anvil\CryptoPriceEstimator_Dev\server_code\Market Capitalization Calculator.txt"
+/server_code/archive
