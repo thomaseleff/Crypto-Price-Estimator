@@ -2,7 +2,7 @@
 |                                                     CRYPTO PRICE ESTIMATOR                                                     | 
 +--------------------------------------------------------------------------------------------------------------------------------+ 
     Revision    : [1_1] 
-    Date        : [2021-12-18] 
+    Date        : [2022-01-23] 
 
 
 +----------------------------------------------------------------+ 
@@ -19,25 +19,6 @@ NOTE: Uplink Established Successfully [4PEASWHJPSO4VUYS2M6FHD4X-V6YDNU752H23XGPB
 
 MESSAGE		   SESSION HASH			               DATETIME                    ID    COIN     TARGET CURRENCY
 -----------------  ------------------------------------------  --------------------------  ----  -------  ----------------------
-CLIENT REQUEST  :  [a210d9989360b6578f2dd131192593e94044c783]  2021-12-18 11:08:21.210000  0003  SOL1-USD  United States [Dollar]
-COMPLETED       :  [a210d9989360b6578f2dd131192593e94044c783]  2021-12-18 11:08:21.210000  0003  SOL1-USD  United States [Dollar]
-NEW SESSION     :  [a3ea3d0d49b2bfffc211e670c52848118b5e75e3]  2021-12-18 11:13:36.286000
-
-
-+----------------------------------------------------------------+ 
-|   Update Anvil Database Tables                                 | 
-+----------------------------------------------------------------+ 
-    Info        : [https://crypto-price-estimator.anvil.app] 
-
-NOTE: Anvil Database Tables Cleared Successfully.
-NOTE: [value] Anvil Database Table Updated Successfully.
-NOTE: [volume] Anvil Database Table Updated Successfully.
-NOTE: [exchange] Anvil Database Table Updated Successfully.
-
-+----------------------------------------------------------------+ 
-|   Anvil Client Requests                                        | 
-+----------------------------------------------------------------+ 
-    Info        : [https://crypto-price-estimator.anvil.app] 
-
-MESSAGE		   SESSION HASH			               DATETIME                    ID    COIN     TARGET CURRENCY
------------------  ------------------------------------------  --------------------------  ----  -------  ----------------------
+NEW SESSION     :  [8daa623499a4dc29453bbf206f1bd5801faf6c22]  2022-01-23 11:01:20.332000
+CLIENT REQUEST  :  [8daa623499a4dc29453bbf206f1bd5801faf6c22]  2022-01-23 11:01:39.710000  0001  BTC-USD  United States [Dollar]
+COMPLETED       :  [8daa623499a4dc29453bbf206f1bd5801faf6c22]  2022-01-23 11:01:39.710000  0001  BTC-USD  United States [Dollar]

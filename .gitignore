@@ -2,3 +2,5 @@
 *.pyo
 __pycache__
 .anvil-data
+"\server_code\Main.py"
+"\server_code\Market Capitalization Calculator.txt"

@@ -2,14 +2,15 @@
 #   Anvil Uplink Server
 # --------------------------------------------------
 #   Author   : Tom Eleff
-#   Version  : 1_1
-#   Date     : 30JUN21
+#   Version  : 1_0
+#   Date     : 23JAN22
 # --------------------------------------------------
 
 import schedule
 import time
 import os
 import sys
+import json
 import datetime
 import warnings
 import hashlib
@@ -29,8 +30,8 @@ from anvil.tables import app_tables
 databaseLoc = os.path.dirname(__file__)
 configDict = {'logPath': databaseLoc,
               'configPath': databaseLoc,
-              'modulePath': databaseLoc + '/1. Modules',
-              'outPath': databaseLoc + '/2. Database'}
+              'modulePath': databaseLoc + '/modules',
+              'outPath': databaseLoc + '/database'}
 
 # --------------------------------------------------
 # Create Dictionaries
@@ -51,8 +52,17 @@ urlDict = {'valURL': 'https://www.federalreserve.gov/paymentsystems'
 # --------------------------------------------------
 
 date = str(datetime.datetime.now()).split(' ')[0]
-version = '1_1'
-upLinkID = '4PEASWHJPSO4VUYS2M6FHD4X-V6YDNU752H23XGPB'
+version = '1_0'
+
+# --------------------------------------------------
+# Retrive upLinkID
+# --------------------------------------------------
+
+serverConfigJson = open(databaseLoc
+                        + '/server_config.json')
+serverConfig = json.load(serverConfigJson)
+serverConfigJson.close()
+upLinkID = serverConfig["upLinkID"]
 
 # --------------------------------------------------
 # Connect to Client
