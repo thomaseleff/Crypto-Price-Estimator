@@ -341,4 +341,4 @@ components:
     bold: false, underline: false, icon: ''}
   name: label_1
   layout_properties: {slot: title}
-  event_bindings: {show: label_1_show}
+  event_bindings: {}

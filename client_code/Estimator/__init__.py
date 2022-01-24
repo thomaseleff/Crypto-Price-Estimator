@@ -2,8 +2,8 @@
 #   Cryptocurrency Price Estimator
 # --------------------------------------------------
 #   Author   : Tom Eleff
-#   Version  : 1_1
-#   Date     : 29MAY21
+#   Version  : 1_1_1
+#   Date     : 24JAN22
 # --------------------------------------------------
 
 from ._anvil_designer import EstimatorTemplate
@@ -116,15 +116,10 @@ class Estimator(EstimatorTemplate):
 
       
   def primary_color_1_click(self, **event_args):
-    global reqCounter
+    global reqCounter, year
 
     # Iterate Request Counter
     reqCounter += 1
-
-    # Output Status
-    self.label_25.foreground = '#2196F3'
-    self.label_25.text = ('NOTE: Request Pending... Awaiting Results.\n'
-                          + 'Refresh Page to Cancel.')
     
     # Reset Text Formats
     self.label_14.foreground = '#000000'
@@ -143,84 +138,99 @@ class Estimator(EstimatorTemplate):
     self.label_14.text = '--'
 
     # Get Ticker Name, Accept Names like 'BTC' or 'BTC-USD'
-    userTicker = self.text_box_1.text.replace(' ','')
-    try:
-      if userTicker.split('-')[1] == 'USD':
-        reqTicker = userTicker
-      else:
-        reqTicker = userTicker.split('-')[0] + '-USD'
-    except IndexError:
-      reqTicker = userTicker + '-USD'
+    if self.text_box_1.text == '':
 
-    # Get Exchange Rate
-    selectedCurrency = self.drop_down_1.selected_value
-    queryCurrency = self.drop_down_1.selected_value.replace(' [','_')
-    queryCurrency = queryCurrency.replace(']','')
-    queryCurrency = queryCurrency.replace(' ','')
-    queryCurrency = queryCurrency.upper()
-
-    if queryCurrency == 'UNITEDSTATES_DOLLAR':
-      exchRate = 1
-    else:
-      exchRate = [row[queryCurrency+'-US'] for row in app_tables.exchange.search(Year=year)][0]
-    
-    # Request Cryptocurrency Metrics
-    try:
-      valDict = anvil.server.call('request_mktdata',
-                                  startDate, endDate,
-                                  year, reqTicker,
-                                  estValue, forecastPeriod,
-                                  exchRate, selectedCurrency,
-                                  reqCounter, sessDict['sessHash'],
-                                  str(datetime.datetime.now()))
-      
-      # Check if Request was Successful
-      if 'ERROR' in valDict.keys():
         # Output Status
         self.label_25.foreground = '#F44336'
-        self.label_25.text = 'ERROR: '+ valDict['ERROR']
-  
-      else:
-        # Configure Label Values
-        self.label_6.text = ('Target Market Cap\n[Billions '
-                            + currencyICODict[queryCurrency] + ']')
-        self.label_8.text = ('Crypto Market Cap\n[Billions '
-                            + currencyICODict[queryCurrency] + ']')
-        self.label_10.text = ('Coin Price\n['
-                            + currencyICODict[queryCurrency] + ']')
-        self.label_15.text = ('Estimated Coin\nPrice ['
-                            + currencyICODict[queryCurrency] + ']')
-        
-        # Congfigure Text Formats
-        if valDict['perGrowth'] > 100:
-          self.label_14.foreground = '#4CAF50'
-        elif valDict['perGrowth'] < 100:
-          self.label_14.foreground = '#F44336'
-        else:
-          self.label_14.foreground = '#000000'
-    
-        self.label_14.bold = True
-    
-        # Congfigure Text Values
-        self.label_7.text = '{:,.1f}'.format(valDict['marketCap'])
-        self.label_9.text = '{:,.1f}'.format(valDict['cryptoCap'])
-        self.label_11.text = '{:,.2f}'.format(valDict['coinPrice'])
-        self.label_16.text = '{:,}'.format(valDict['estCoinPrice'])
-        self.label_12.text = '{:,}'.format(valDict['priceMult'])
-        self.label_14.text = '{:=+,.0f}'.format(valDict['perGrowth'])
-        
+        self.label_25.text = ("ERROR: Please provide a valid 'Crypto Ticker' value \n"
+                              "from https://finance.yahoo.com/cryptocurrencies/.")
+    else:
+
         # Output Status
-        self.label_25.foreground = '#4CAF50'
-        self.label_25.text = 'NOTE: Request Complete.'
+        self.label_25.foreground = '#2196F3'
+        self.label_25.text = ('NOTE: Request Pending... Awaiting Results.\n'
+                              + 'Refresh Page to Cancel.')
 
-    except anvil.server.UplinkDisconnectedError:
+        # Re-Format Ticker Value
+        userTicker = self.text_box_1.text.replace(' ','')
+        try:
+            if userTicker.split('-')[1] == 'USD':
+              reqTicker = userTicker
+            else:
+              reqTicker = userTicker.split('-')[0] + '-USD'
+        except IndexError:
+            reqTicker = userTicker + '-USD'
     
-      # Disable Calculation Button
-      self.primary_color_1.enabled = False
+        # Get Exchange Rate
+        selectedCurrency = self.drop_down_1.selected_value
+        queryCurrency = self.drop_down_1.selected_value.replace(' [','_')
+        queryCurrency = queryCurrency.replace(']','')
+        queryCurrency = queryCurrency.replace(' ','')
+        queryCurrency = queryCurrency.upper()
+    
+        if queryCurrency == 'UNITEDSTATES_DOLLAR':
+          exchRate = 1
+        else:
+          try:
+            exchRate = [row[queryCurrency+'-US'] for row in app_tables.exchange.search(Year=year)][0]
+          except IndexError:
+            exchRate = [row[queryCurrency+'-US'] for row in app_tables.exchange.search(Year=int(year-1))][0]
+        
+        # Request Cryptocurrency Metrics
+        try:
+          valDict = anvil.server.call('request_mktdata',
+                                      startDate, endDate,
+                                      year, reqTicker,
+                                      estValue, forecastPeriod,
+                                      exchRate, selectedCurrency,
+                                      reqCounter, sessDict['sessHash'],
+                                      str(datetime.datetime.now()))
+          
+          # Check if Request was Successful
+          if 'ERROR' in valDict.keys():
+            # Output Status
+            self.label_25.foreground = '#F44336'
+            self.label_25.text = 'ERROR: '+ valDict['ERROR']
       
-      # Output Status
-      self.label_25.foreground = '#F44336'
-      self.label_25.text = ('ERROR: Uplink Server is Not Connected.\n'
-                            'Please Try Again Later.')
-
-
+          else:
+            # Configure Label Values
+            self.label_6.text = ('Target Market Cap\n[Billions '
+                                + currencyICODict[queryCurrency] + ']')
+            self.label_8.text = ('Crypto Market Cap\n[Billions '
+                                + currencyICODict[queryCurrency] + ']')
+            self.label_10.text = ('Coin Price\n['
+                                + currencyICODict[queryCurrency] + ']')
+            self.label_15.text = ('Estimated Coin\nPrice ['
+                                + currencyICODict[queryCurrency] + ']')
+            
+            # Congfigure Text Formats
+            if valDict['perGrowth'] > 100:
+              self.label_14.foreground = '#4CAF50'
+            elif valDict['perGrowth'] < 100:
+              self.label_14.foreground = '#F44336'
+            else:
+              self.label_14.foreground = '#000000'
+        
+            self.label_14.bold = True
+        
+            # Congfigure Text Values
+            self.label_7.text = '{:,.1f}'.format(valDict['marketCap'])
+            self.label_9.text = '{:,.1f}'.format(valDict['cryptoCap'])
+            self.label_11.text = '{:,.2f}'.format(valDict['coinPrice'])
+            self.label_16.text = '{:,}'.format(valDict['estCoinPrice'])
+            self.label_12.text = '{:,}'.format(valDict['priceMult'])
+            self.label_14.text = '{:=+,.0f}'.format(valDict['perGrowth'])
+            
+            # Output Status
+            self.label_25.foreground = '#4CAF50'
+            self.label_25.text = 'NOTE: Request Complete.'
+    
+        except anvil.server.UplinkDisconnectedError:
+        
+          # Disable Calculation Button
+          self.primary_color_1.enabled = False
+          
+          # Output Status
+          self.label_25.foreground = '#F44336'
+          self.label_25.text = ('ERROR: Uplink Server is Not Connected.\n'
+                                'Please Try Again Later.')
